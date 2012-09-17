@@ -1,0 +1,25 @@
+body {
+    margin:0;
+    padding:0;
+    font-family:Arial, sans-serif;
+    font-size:11pt;
+    height:1640px;
+    border-bottom:5px solid #FF8544;
+    background:#0F1B1C;
+}
+
+.thing {
+    padding:10px 30px 30px;
+    overflow:hidden;
+    position:relative;
+    margin:20px;
+    height:190px;
+    width:400px;
+    opacity:1;
+    background:#fff;
+}
+h1 {
+    color:#FF8548;
+    font-size:30pt;
+    font-weight:bold;
+}
