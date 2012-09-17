@@ -8,9 +8,14 @@ See it live: [Demo](http://andrewray.me/kill-with-fire).
 
 Only works on elements with white backgrounds. Change images/circle_eat.png to a different color for otherwise.
 
-    var $thing = $('.thing').killWithFire(function() {
-        console.log('done!');
-    });
+Takes optional config object
+
+    var $thing = $('.thing').killWithFire({
+        callback: function() {
+            console.log('done!');
+        }),
+        image_path: '/images_dir/' // defaults to images/ . Must have trailing slash!
+    })
 
 Originally made for [The Hippopotamatron 5000](http://andrewray.me/assets/games/hippopotamatron/index.htm).
 

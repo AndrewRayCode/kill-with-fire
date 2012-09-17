@@ -1,11 +1,15 @@
 (function() {
 
-var sp = 'images/',
+var sp,
     animations = [],
     MOTION = {'Normal':1, 'Smooth':2},      // AS3 like motion types. Used for tweening
     INTERVAL = {'Tween':10, 'Animation':20};// Intervals in milliseconds for setTimeout calls. Defaults are Tween:10, Animation:1
 
-$.fn.killWithFire = function(callback) {
+$.fn.killWithFire = function(config) {
+    config = config || {};
+
+    sp = config.image_path || 'images/';
+
     var elem = this.get(0), me = this;
     this.css('overflow', 'hidden');
     var offset = {
@@ -25,9 +29,7 @@ $.fn.killWithFire = function(callback) {
     setTimeout(function() {
         me.fadeOut().promise().then(function() {
             me.remove();
-            if(callback) {
-                callback();
-            }
+            config.callback && config.callback();
         });
     }, 450 * steps);
 
@@ -81,7 +83,7 @@ function SpriteAnimation(sourceImage, width, height, sprite_width, sprite_height
 
     // Remove the animation from the stack
     this.destroy = function() {
-        animations.remove(this);
+        removeFromArray(animations, this);
         this.animation.remove();
         if(callback) {
             callback();
@@ -119,10 +121,10 @@ function randInt(min, max) {
 }
     
 // Remove a specific element from an array
-Array.prototype.remove = function(item) {
-    for(var x=0; x<this.length; x++) {
-        if(this[x] == item) {
-            this.splice(x, 1);
+var removeFromArray = function(array, item) {
+    for(var x=0; x<array.length; x++) {
+        if(array[x] == item) {
+            array.splice(x, 1);
             return item;
         }
     }

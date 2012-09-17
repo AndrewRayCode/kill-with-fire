@@ -14,9 +14,11 @@
         <script type="text/javascript" src="js/fire.js"></script>
         <script>
             $(function() {
-                var $thing = $('.thing').killWithFire(function() {
-                    console.log('done!');
-                });
+                var $thing = $('.thing').killWithFire({
+                    callback: function() {
+                        console.log('done!');
+                    })
+                })
             });
         </script>
     </body>
