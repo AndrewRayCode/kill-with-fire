@@ -2,6 +2,8 @@ Kill it with fire!
 ------------------
 Not metaphorically speaking.
 
+See it live: [Demo](http://andrewray.me/kill-with-fire).
+
 Only works on elements with white backgrounds. Change images/circle_eat.png to a different color for otherwise.
 
     var $thing = $('.thing').killWithFire(function() {
