@@ -8,6 +8,6 @@ Only works on elements with white backgrounds. Change images/circle_eat.png to a
         console.log('done!');
     });
 
-Originally made for [The Hippopotamatron 500](http://andrewray.me/assets/games/hippopotamatron/index.htm).
+Originally made for [The Hippopotamatron 5000](http://andrewray.me/assets/games/hippopotamatron/index.htm).
 
 Never license your code.
