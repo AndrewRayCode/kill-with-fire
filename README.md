@@ -13,7 +13,7 @@ Takes optional config object
     var $thing = $('.thing').killWithFire({
         callback: function() {
             console.log('done!');
-        }),
+        },
         image_path: '/images_dir/' // defaults to images/ . Must have trailing slash!
     })
 
